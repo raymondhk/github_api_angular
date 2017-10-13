@@ -1,0 +1,23 @@
+<h1>
+  GitHub Score
+</h1>
+<div class="row">
+  <div class="col-xs-6">
+    <form (submit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group form-inline">
+        <label>GitHub Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required minlength="2" [(ngModel)]="user.username" #currentUser='ngModel'>
+        <span *ngIf="currentUser.errors && (currentUser.dirty)" class="alert">
+          <span class="warn" [hidden]="!currentUser.errors.required">User is required.</span>
+        </span>
+      </div>
+      <button type="submit" [disabled]="!heroForm.form.valid" class="btn btn btn-block">Calculate my GitHub Score</button>
+    </form>
+  </div>
+  <div class="col-xs-6">
+    <div>
+      <app-show-user [gitUser]="tasks"></app-show-user>
+    </div>
+  </div>
+  <p>{{ tasks | json}}</p>
+</div>

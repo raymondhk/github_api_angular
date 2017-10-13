@@ -1,0 +1,7 @@
+<h1>Your Score: {{gitUser.public_repos}}</h1>
+<br>
+<h3 *ngIf="gitUser.public_repos < 20" class="red">Needs Work!</h3>
+<h3 *ngIf="gitUser.public_repos > 20 && gitUser.public_repos < 50  " class="orange">A Decent Start!</h3>
+<h3 *ngIf="gitUser.public_repos > 50 && gitUser.public_repos < 100 ">Doing Good!</h3>
+<h3 *ngIf="gitUser.public_repos > 100 && gitUser.public_repos < 200 " class="green">Great job!</h3>
+<h3 *ngIf="gitUser.public_repos >= 200" class="blue">GitHub Elite!</h3>
