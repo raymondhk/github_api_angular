@@ -5,3 +5,4 @@
 <h3 *ngIf="gitUser.public_repos > 50 && gitUser.public_repos < 100 ">Doing Good!</h3>
 <h3 *ngIf="gitUser.public_repos > 100 && gitUser.public_repos < 200 " class="green">Great job!</h3>
 <h3 *ngIf="gitUser.public_repos >= 200" class="blue">GitHub Elite!</h3>
+<h3 *ngIf="error.length > 1 &&  gitUser.length < 1" class="blue">No User Found.</h3>

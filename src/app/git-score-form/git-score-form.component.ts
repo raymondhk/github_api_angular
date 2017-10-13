@@ -11,30 +11,23 @@ export class GitScoreFormComponent implements OnInit {
   user = new User();
   current: String = ''
   tasks = [];
+  message = ""
 
   constructor(private _taskService: TaskService){}
 
   onSubmit() {
+    let self = this
     console.log(this.user)
     this.current = this.user.username
     console.log(this.current)
-    this._taskService.gitScore(this.current, function() {
-      console.log("AllGood"); 
+    this._taskService.gitScore(this.current, function(tasks){           self.tasks = tasks;
+      console.log(self.tasks)
     });
     this.tasks.push(this._taskService.tasks)
-    console.log(this.tasks)
+    this.message = "No user Found."
     this.user = new User()
     
   }
-  // nameGen(_taskService: TaskService) {
-  //   _taskService.gitScore(this.current, this);
-  // }
-
-  // constructor(private _taskService: TaskService) {
-  //   this._taskService.gitScore(this.current, this) => {
-  //     this.tasks = tasks;
-  //   });
-  // }
 
   ngOnInit() {
   }

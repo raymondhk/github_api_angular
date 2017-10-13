@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowUserComponent implements OnInit {
   @Input() gitUser;
+  @Input() error;
   constructor() { }
 
   ngOnInit() {

@@ -16,8 +16,8 @@
   </div>
   <div class="col-xs-6">
     <div>
-      <app-show-user [gitUser]="tasks"></app-show-user>
+      <app-show-user [gitUser]="tasks" [error]="message"></app-show-user>
     </div>
   </div>
-  <p>{{ tasks | json}}</p>
+  <!-- <p>{{ tasks | json}}</p> -->
 </div>

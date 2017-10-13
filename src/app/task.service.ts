@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class TaskService {
 
-  tasks = []
+  tasks = [];
   param = "";
   api = 'https://api.github.com/users/' 
   constructor(private _http: Http) { }
